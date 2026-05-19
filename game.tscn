@@ -1,0 +1,454 @@
+[gd_scene format=3 uid="uid://bav7helqp8y2y"]
+
+[ext_resource type="Script" uid="uid://en1eciq3x0p6" path="res://maingame.gd" id="1_f1jbl"]
+[ext_resource type="Texture2D" uid="uid://drmncfs3ugmjb" path="res://images/new/night.png" id="2_vaj68"]
+[ext_resource type="Texture2D" uid="uid://dvymkqemm354t" path="res://images/new/image 1.png" id="3_i2p71"]
+[ext_resource type="Texture2D" uid="uid://bycwt63fjpnwc" path="res://images/new/dawn.png" id="3_xa8c5"]
+[ext_resource type="Texture2D" uid="uid://hxcm3eh7s3ei" path="res://images/new/image 2.png" id="4_xa8c5"]
+[ext_resource type="Shader" uid="uid://fmewn3txp4x4" path="res://shaders/room.gdshader" id="5_5b14r"]
+[ext_resource type="Texture2D" uid="uid://c508ev8kyr5f3" path="res://images/new/Demo Game Assets_bg_new.png" id="6_bnpwn"]
+[ext_resource type="Texture2D" uid="uid://bxntxkkacs6c8" path="res://images/hpclickarea.tres" id="7_36jdj"]
+[ext_resource type="Texture2D" uid="uid://cglt624i1x3jx" path="res://images/laptopclickarea.tres" id="8_xfvwf"]
+[ext_resource type="Texture2D" uid="uid://ba1djjpoi2655" path="res://images/new/bg_pc.png" id="9_dhpj7"]
+[ext_resource type="Texture2D" uid="uid://lu2p28bdt5yl" path="res://images/new/taskbar.png" id="10_7knny"]
+[ext_resource type="Texture2D" uid="uid://cf7peekgt5x7v" path="res://images/new/folder.png" id="11_082n1"]
+[ext_resource type="Texture2D" uid="uid://dn54elblfongm" path="res://images/new/app tugas.png" id="12_xex6t"]
+[ext_resource type="Texture2D" uid="uid://c2ney6wosvtjg" path="res://images/new/stickynotes.png" id="13_aa0lp"]
+[ext_resource type="Texture2D" uid="uid://c6mjts4g5vm6d" path="res://images/new/app tugas window.png" id="14_iu0sx"]
+[ext_resource type="FontFile" uid="uid://dp813g4ohjb7m" path="res://fonts/FindersKeepers.ttf" id="15_4v2jo"]
+[ext_resource type="FontFile" uid="uid://40fy4pvexbu0" path="res://fonts/ChiKareGo.ttf" id="16_l1i01"]
+[ext_resource type="Texture2D" uid="uid://t30fa01lu1gv" path="res://images/new/close.png" id="17_r62pu"]
+[ext_resource type="Texture2D" uid="uid://dhll05jjqgtip" path="res://images/new/power.png" id="18_klri6"]
+[ext_resource type="Shader" uid="uid://djdms6dbt16ag" path="res://shaders/shader.gdshader" id="19_eu6ph"]
+[ext_resource type="Shader" uid="uid://b0luoqvffcfcr" path="res://shaders/vignette.gdshader" id="20_edr7y"]
+[ext_resource type="AudioStream" uid="uid://c525w8p5qg6fj" path="res://audio/212520__taira-komori__click.mp3" id="21_kq12w"]
+[ext_resource type="AudioStream" uid="uid://ceaja4idvstft" path="res://audio/341670__dangthaiduy007__jump-scare-sound-3.ogg" id="22_t46w6"]
+[ext_resource type="AudioStream" uid="uid://dgkskneilri7d" path="res://audio/416106__nixeno__nixeno-room-amb-night-clock.mp3" id="23_m28ev"]
+[ext_resource type="AudioStream" uid="uid://d1kdwk6ohvrme" path="res://audio/573189__inspectorj__computer-glitching-digital-data-corruption-02-04-loop.wav" id="24_lwlx3"]
+[ext_resource type="AudioStream" uid="uid://uxgblmj64p7t" path="res://audio/rustling.mp3" id="25_vaj68"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjqkl"]
+size = Vector2(202, 898)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k73cj"]
+shader = ExtResource("5_5b14r")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_epypp"]
+shader = ExtResource("19_eu6ph")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ta5nu"]
+shader = ExtResource("20_edr7y")
+shader_parameter/intensity = 0.50000002375
+shader_parameter/softness = 0.50000002375
+
+[node name="MainGame" type="Node2D" unique_id=2080064086]
+script = ExtResource("1_f1jbl")
+
+[node name="Room" type="CanvasGroup" parent="." unique_id=709273690]
+
+[node name="BGLuar_Night" type="TextureRect" parent="Room" unique_id=2049021415]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 869.0
+offset_right = 1280.0
+offset_bottom = 462.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vaj68")
+metadata/_edit_use_anchors_ = true
+
+[node name="BGLuar_Dawn" type="TextureRect" parent="Room" unique_id=1287257984]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 869.0
+offset_right = 1280.0
+offset_bottom = 462.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xa8c5")
+metadata/_edit_use_anchors_ = true
+
+[node name="PenampakanJendela" type="Area2D" parent="Room" unique_id=2098986305]
+visible = false
+position = Vector2(1094, 276)
+scale = Vector2(0.5, 0.5)
+
+[node name="SpriteTutup" type="Sprite2D" parent="Room/PenampakanJendela" unique_id=1471780607]
+texture = ExtResource("3_i2p71")
+
+[node name="SpriteBuka" type="Sprite2D" parent="Room/PenampakanJendela" unique_id=60407600]
+visible = false
+texture = ExtResource("4_xa8c5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room/PenampakanJendela" unique_id=1916773962]
+position = Vector2(-3, -99)
+shape = SubResource("RectangleShape2D_rjqkl")
+
+[node name="RoomSprite" type="Sprite2D" parent="Room" unique_id=312624228]
+material = SubResource("ShaderMaterial_k73cj")
+position = Vector2(640, 360)
+scale = Vector2(0.2222222, 0.22222224)
+texture = ExtResource("6_bnpwn")
+
+[node name="HPClickArea" type="TextureButton" parent="Room" unique_id=79425593]
+offset_left = 145.0
+offset_top = 613.99994
+offset_right = 1898.0
+offset_bottom = 1091.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("7_36jdj")
+metadata/_edit_use_anchors_ = true
+
+[node name="LaptopClickArea" type="TextureButton" parent="Room" unique_id=1146587670]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 438.99997
+offset_top = 328.99997
+offset_right = 2665.0
+offset_bottom = 1780.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("8_xfvwf")
+metadata/_edit_use_anchors_ = true
+
+[node name="LaptopUI" type="CanvasLayer" parent="." unique_id=1512129889]
+visible = false
+
+[node name="ScreenOL" type="ColorRect" parent="LaptopUI" unique_id=649341290]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="OS_UI" type="Control" parent="LaptopUI" unique_id=467452192]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="DesktopBG" type="TextureRect" parent="LaptopUI/OS_UI" unique_id=1883835112]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("9_dhpj7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Taskbar" type="TextureRect" parent="LaptopUI/OS_UI" unique_id=1958523465]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -506.0
+offset_top = -47.0
+offset_right = 505.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("10_7knny")
+expand_mode = 1
+
+[node name="FolderIcon2" type="TextureRect" parent="LaptopUI/OS_UI" unique_id=657689147]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 22.0
+offset_right = 384.0
+offset_bottom = 190.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_082n1")
+
+[node name="FolderIcon3" type="TextureRect" parent="LaptopUI/OS_UI" unique_id=764395877]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 143.0
+offset_right = 384.0
+offset_bottom = 311.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_082n1")
+
+[node name="TaskApp" type="Button" parent="LaptopUI/OS_UI" unique_id=823484764]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 253.0
+offset_right = 424.0
+offset_bottom = 521.0
+scale = Vector2(0.4, 0.4)
+icon = ExtResource("12_xex6t")
+flat = true
+
+[node name="StickyNotes" type="NinePatchRect" parent="LaptopUI/OS_UI" unique_id=477319165]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 45.0
+offset_right = 543.0
+offset_bottom = 277.0
+texture = ExtResource("13_aa0lp")
+
+[node name="MarginContainer" type="MarginContainer" parent="LaptopUI/OS_UI/StickyNotes" unique_id=1193432529]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LaptopUI/OS_UI/StickyNotes/MarginContainer" unique_id=438813477]
+clip_contents = true
+layout_mode = 2
+
+[node name="Clue1" type="RichTextLabel" parent="LaptopUI/OS_UI/StickyNotes/MarginContainer/VBoxContainer" unique_id=2020251619]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "Cari metode klasifikasi"
+fit_content = true
+
+[node name="Clue2" type="RichTextLabel" parent="LaptopUI/OS_UI/StickyNotes/MarginContainer/VBoxContainer" unique_id=814530509]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "Temukan penyebab bottleneck"
+fit_content = true
+
+[node name="Clue3" type="RichTextLabel" parent="LaptopUI/OS_UI/StickyNotes/MarginContainer/VBoxContainer" unique_id=922302720]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "Cari teknik validasi"
+fit_content = true
+
+[node name="TaskWindow" type="NinePatchRect" parent="LaptopUI/OS_UI" unique_id=1476747093]
+layout_mode = 0
+offset_left = 617.0
+offset_top = 119.0
+offset_right = 1107.0
+offset_bottom = 640.0
+texture = ExtResource("14_iu0sx")
+
+[node name="MarginContainer" type="MarginContainer" parent="LaptopUI/OS_UI/TaskWindow" unique_id=1479924917]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LaptopUI/OS_UI/TaskWindow/MarginContainer" unique_id=191968275]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LaptopUI/OS_UI/TaskWindow/MarginContainer/ScrollContainer" unique_id=15334897]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ArcticleText1" type="RichTextLabel" parent="LaptopUI/OS_UI/TaskWindow/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1633485583]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("15_4v2jo")
+theme_override_fonts/bold_font = ExtResource("16_l1i01")
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "[center][b][font_size=20]ANALISIS PERFORMA WFA-kNN PADA DATASET NON-LINEAR[/font_size][/b][/center]
+
+[fill]
+Metode K-Nearest Neighbors (kNN) telah lama menjadi standar dalam klasifikasi pola, namun efektivitasnya seringkali menurun saat dihadapkan pada noise dataset yang tinggi. Dalam eksperimen ini, kami menerapkan [url=\"k1\"]metode pembobotan jarak Euclidean untuk meminimalisir dampak outlier pada akurasi final[/url]. Hasil awal menunjukkan peningkatan stabilitas sistem secara signifikan.
+
+Permasalahan utama yang ditemukan selama pengujian adalah tingginya beban komputasi saat menangani dimensi data yang besar. [url=\"k2\"]Proses verifikasi data seringkali mengalami bottleneck pada fase kalkulasi jarak antar titik state[/url], terutama saat jumlah alfabet input meningkat secara eksponensial. Hal ini selaras dengan teori kompleksitas waktu pada mesin otomata.
+
+Untuk memastikan hasil yang valid, tim peneliti menggunakan [url=\"k3\"]teknik 5-Fold Cross Validation yang dikombinasikan dengan matriks evaluasi presisi dan recall[/url]. Berdasarkan data tersebut, sistem deteksi ini dinyatakan siap untuk diimplementasikan pada lingkungan produksi, meskipun pengawasan manual tetap diperlukan untuk menghindari anomali transisi state yang tidak terdefinisi.
+[/fill]"
+horizontal_alignment = 3
+vertical_alignment = 3
+meta_underlined = false
+selection_enabled = true
+
+[node name="CloseApp" type="TextureButton" parent="LaptopUI/OS_UI/TaskWindow" unique_id=425598424]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -47.0
+offset_top = 7.0
+offset_right = -10.0
+offset_bottom = 43.0
+grow_horizontal = 0
+texture_normal = ExtResource("17_r62pu")
+
+[node name="PowerExit" type="Button" parent="LaptopUI/OS_UI" unique_id=1002498006]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 675.0
+offset_right = 196.0
+offset_bottom = 732.0
+scale = Vector2(0.75, 0.75)
+icon = ExtResource("18_klri6")
+flat = true
+
+[node name="ScreenOL2" type="ColorRect" parent="LaptopUI" unique_id=1063503072]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0, 0, 1)
+
+[node name="PostProcess" type="CanvasLayer" parent="." unique_id=758110344]
+
+[node name="ShaderRect" type="ColorRect" parent="PostProcess" unique_id=1815476751]
+material = SubResource("ShaderMaterial_epypp")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Vignette" type="ColorRect" parent="PostProcess" unique_id=979318775]
+material = SubResource("ShaderMaterial_ta5nu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogueSystem" type="CanvasLayer" parent="." unique_id=2059836610]
+visible = false
+
+[node name="NinePatchRect" type="Panel" parent="DialogueSystem" unique_id=146750925]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -264.0
+offset_top = -171.0
+offset_right = 291.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="DialogueLabel" type="RichTextLabel" parent="DialogueSystem/NinePatchRect" unique_id=309028799]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -46.0
+offset_right = -13.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("16_l1i01")
+theme_override_font_sizes/normal_font_size = 24
+fit_content = true
+
+[node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=676128062]
+
+[node name="BlackFade" type="ColorRect" parent="TransitionLayer" unique_id=502920958]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="DayLabel" type="RichTextLabel" parent="TransitionLayer/BlackFade" unique_id=930090208]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("16_l1i01")
+theme_override_font_sizes/normal_font_size = 96
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EndScreen" type="Control" parent="TransitionLayer" unique_id=1230485233]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="FinalLabel" type="RichTextLabel" parent="TransitionLayer/EndScreen" unique_id=40024536]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 48
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Audio" type="Node" parent="." unique_id=1552017822]
+
+[node name="UIClick" type="AudioStreamPlayer" parent="Audio" unique_id=381526744]
+stream = ExtResource("21_kq12w")
+
+[node name="Jumpscare" type="AudioStreamPlayer2D" parent="Audio" unique_id=1578366243]
+stream = ExtResource("22_t46w6")
+
+[node name="Ambience" type="AudioStreamPlayer" parent="Audio" unique_id=153348507]
+stream = ExtResource("23_m28ev")
+volume_db = -10.0
+parameters/looping = true
+
+[node name="LaptopCrash" type="AudioStreamPlayer" parent="Audio" unique_id=1274726101]
+stream = ExtResource("24_lwlx3")
+
+[node name="Rustle" type="AudioStreamPlayer" parent="Audio" unique_id=373305463]
+stream = ExtResource("25_vaj68")
+
+[connection signal="input_event" from="Room/PenampakanJendela" to="." method="_on_penampakan_jendela_input_event"]
+[connection signal="pressed" from="Room/LaptopClickArea" to="." method="_on_laptop_click_area_pressed"]
+[connection signal="pressed" from="LaptopUI/OS_UI/TaskApp" to="." method="_on_task_icon_pressed"]
+[connection signal="meta_hover_ended" from="LaptopUI/OS_UI/TaskWindow/MarginContainer/ScrollContainer/VBoxContainer/ArcticleText1" to="." method="_on_arcticle_text_1_meta_hover_ended"]
+[connection signal="meta_hover_started" from="LaptopUI/OS_UI/TaskWindow/MarginContainer/ScrollContainer/VBoxContainer/ArcticleText1" to="." method="_on_arcticle_text_1_meta_hover_started"]
+[connection signal="pressed" from="LaptopUI/OS_UI/TaskWindow/CloseApp" to="." method="_on_close_app_button_pressed"]
+[connection signal="pressed" from="LaptopUI/OS_UI/PowerExit" to="." method="_on_power_exit_pressed"]

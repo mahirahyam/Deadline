@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://bm6ak56h4erxx"]
+
+[ext_resource type="Script" uid="uid://cannr1l0bu7oa" path="res://menu.gd" id="1_l48gv"]
+[ext_resource type="Texture2D" uid="uid://6jw7dm0msmb8" path="res://images/new/Space Background(1).png" id="1_mae5d"]
+[ext_resource type="Shader" uid="uid://fmewn3txp4x4" path="res://shaders/room.gdshader" id="2_4hy44"]
+[ext_resource type="AudioStream" uid="uid://o5b3gqolrgja" path="res://audio/Where My Home Is.wav" id="2_ecwwl"]
+[ext_resource type="Texture2D" uid="uid://c508ev8kyr5f3" path="res://images/new/Demo Game Assets_bg_new.png" id="3_ytr4m"]
+[ext_resource type="Texture2D" uid="uid://c7jap4vjrql7x" path="res://UI/Main Menu.png" id="4_ytr4m"]
+[ext_resource type="Texture2D" uid="uid://dxtsy2syur7cn" path="res://UI/How to Play.png" id="5_l48gv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l48gv"]
+shader = ExtResource("2_4hy44")
+
+[node name="Menu" type="Control" unique_id=417147431]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l48gv")
+
+[node name="BGMenu" type="AudioStreamPlayer" parent="." unique_id=1705793469]
+stream = ExtResource("2_ecwwl")
+volume_db = -20.0
+
+[node name="BGLuar" type="TextureRect" parent="." unique_id=1287324207]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 233.0
+offset_top = -362.0
+offset_right = 637.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mae5d")
+
+[node name="RoomBG" type="Sprite2D" parent="." unique_id=1800955248]
+material = SubResource("ShaderMaterial_l48gv")
+position = Vector2(641, 359.75)
+scale = Vector2(0.22118057, 0.22052468)
+texture = ExtResource("3_ytr4m")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1908292277]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18, 0.18, 0.18, 0.85490197)
+
+[node name="Menu" type="Control" parent="." unique_id=1991528629]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menuimg" type="TextureRect" parent="Menu" unique_id=2035594022]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ytr4m")
+expand_mode = 1
+
+[node name="Start" type="Button" parent="Menu" unique_id=1976815332]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -44.0
+offset_right = 183.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="HTP" type="Button" parent="Menu" unique_id=118500593]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.0
+offset_top = 70.0
+offset_right = 184.0
+offset_bottom = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Exit" type="Button" parent="Menu" unique_id=540008620]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.0
+offset_top = 187.0
+offset_right = 184.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="HowToPlay" type="Control" parent="." unique_id=1250184394]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HTPimg" type="TextureRect" parent="HowToPlay" unique_id=1731708802]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_l48gv")
+expand_mode = 1
+
+[node name="Close" type="Button" parent="HowToPlay" unique_id=362508297]
+layout_mode = 0
+offset_left = 1164.0
+offset_top = 17.0
+offset_right = 1263.0
+offset_bottom = 104.0
+flat = true
